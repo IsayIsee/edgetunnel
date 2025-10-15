@@ -6,7 +6,7 @@ let proxyIP = '';
 let DNS64Server = '';
 //let sub = '';
 let subConverter = atob('U3ViQXBpLkNtbGlVc3NzUy5OZXQ=');
-let subConfig = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvY29uZmlnL0FDTDRTU1JfT25saW5lX01pbmlfTXVsdGlNb2RlLmluaQ==');
+let subConfig = atob('aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0lzYXlJc2VlL0FDTDRTU1IvZGV2L0NsYXNoL2NvbmZpZy9BQ0w0U1NSX09ubGluZV9NaW5pX011bHRpTW9kZS5pbmk=');
 let subProtocol = 'https';
 let subEmoji = 'true';
 let socks5Address = '';
@@ -102,7 +102,7 @@ export default {
             } else 动态UUID = userID;
 
             if (!userID) {
-                return new Response('请设置你的UUID变量，或尝试重试部署，检查变量是否生效？', {
+                return new Response('请检查变量是否生效？', {
                     status: 404,
                     headers: {
                         "Content-Type": "text/plain;charset=utf-8",
@@ -256,7 +256,7 @@ export default {
                 } else {
                     if (env.URL302) return Response.redirect(env.URL302, 302);
                     else if (env.URL) return await 代理URL(env.URL, url);
-                    else return new Response('不用怀疑！你UUID就是错的！！！', { status: 404 });
+                    else return new Response('404 ！！！', { status: 404 });
                 }
             } else {
                 socks5Address = url.searchParams.get('socks5') || url.searchParams.get('http') || socks5Address;
@@ -7175,4 +7175,5 @@ function config_Html(token = "test", proxyhost = "") {
 </html>`;
 
     return html;
+
 }
